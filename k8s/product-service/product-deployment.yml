@@ -19,7 +19,6 @@ spec:
           ports:
             - containerPort: 5001
           env:
-            env:
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
