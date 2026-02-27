@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: product-service
+  namespace: kube-micro
+spec:
+  selector:
+    app: product
+  ports:
+    - port: 80
+      targetPort: 5001
