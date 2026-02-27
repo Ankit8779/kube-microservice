@@ -9,8 +9,9 @@ spec:
     matchLabels:
       app: auth
   template:
-    labels:
-      app: auth
+    metadata:
+      labels:
+        app: auth
     spec:
       containers:
         - name: auth-pod
