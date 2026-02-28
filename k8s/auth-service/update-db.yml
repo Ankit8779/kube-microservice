@@ -17,13 +17,13 @@ spec:
                 name: auth-secret
                 key: DATABASE_URL
           - name: SECRET_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: auth-secret
-                  key: SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: auth-secret
+                key: SECRET_KEY
           - name: JWT_SECRET_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: auth-secret
-                  key: JWT_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: auth-secret
+                key: JWT_SECRET_KEY
       restartPolicy: Never
