@@ -6,6 +6,8 @@ from flask_jwt_extended import (
     get_jwt_identity
 )
 from config import Config
+from flask_migrate import Migrate
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -13,6 +15,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 jwt = JWTManager(app)
 
+migrate = Migrate(app, db)
 
 # -------------------------
 # Product Model

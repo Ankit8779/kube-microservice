@@ -6,6 +6,7 @@ from flask_jwt_extended import (
     jwt_required, get_jwt_identity
 )
 from config import Config
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -14,6 +15,7 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
+migrate = Migrate(app, db)
 
 # ----------------------
 # Model
@@ -90,7 +92,6 @@ def profile():
         "username": user.username,
         "email": user.email
     })
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
