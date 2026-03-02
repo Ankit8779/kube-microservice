@@ -4,6 +4,7 @@ metadata:
   name: ingress
   namespace: kube-micro
 spec:
+  ingressClassName: nginx
   rules:
     - http:
         paths:
