@@ -3,6 +3,8 @@ apiVersion: networking.k8s.io/v1
 metadata:
   name: ingress
   namespace: kube-micro
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
